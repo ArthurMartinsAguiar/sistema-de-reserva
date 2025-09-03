@@ -32,7 +32,7 @@ public class UsuarioController {
     @GetMapping("/{idusuario}")
     public ResponseEntity<UsuarioResponseDTO> one(@PathVariable Long idusuario){
         UsuarioResponseDTO usuario = usuarioService.readUsuario(idusuario);
-        return new ResponseEntity<>(usuario, HttpStatus.FOUND);
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 
     @PostMapping

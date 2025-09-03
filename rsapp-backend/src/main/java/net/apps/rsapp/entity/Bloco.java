@@ -8,6 +8,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "bloco")
 public class Bloco {
+
+    //TODO: IMPLEMENTAR COMPOSITE KEYS (ALTERAR SERVICE E REPOSITORY)
     @Id
     @Column(name = "idbloco", columnDefinition = "CHAR(4)", length = 4)
     private String idbloco;

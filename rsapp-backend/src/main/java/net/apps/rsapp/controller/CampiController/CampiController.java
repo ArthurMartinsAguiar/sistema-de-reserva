@@ -1,6 +1,5 @@
 package net.apps.rsapp.controller.CampiController;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +22,6 @@ public class CampiController {
     @GetMapping
     public ResponseEntity<List<CampiDTO>> all(){
         List<CampiDTO> campis = campiService.findAllCampis();
-        return new ResponseEntity<>(campis, HttpStatus.FOUND);
+        return ResponseEntity.ok(campis);
     }
 }
