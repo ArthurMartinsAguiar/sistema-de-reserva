@@ -11,14 +11,10 @@ public class Campi {
     @Column(name = "siglacampi", columnDefinition = "CHAR(2)", length = 2)
     private String siglacampi;
 
-    @Column(name = "siglafac", columnDefinition = "CHAR(3)", length = 3)
-    private String siglafac;
-
     public Campi(){}
 
     public Campi(String siglacampi, String siglafac){
         this.siglacampi = siglacampi;
-        this.siglafac = siglafac;
     }
 
     public String getsiglacampi(){
@@ -27,14 +23,6 @@ public class Campi {
 
     public void setsiglacampi(String siglacampi){
         this.siglacampi = siglacampi;
-    }
-
-    public String getsiglafac(){
-        return this.siglafac;
-    }
-
-    public void setsiglafac(String siglafac){
-        this.siglafac = siglafac;
     }
 
     @Override
