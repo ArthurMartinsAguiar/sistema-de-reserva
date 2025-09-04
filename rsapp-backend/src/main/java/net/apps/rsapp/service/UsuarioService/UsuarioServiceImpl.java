@@ -15,7 +15,7 @@ import net.apps.rsapp.mapper.UsuarioMapper.UsuarioMapper;
 @Service
 public class UsuarioServiceImpl implements UsuarioService{
 
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
     public UsuarioServiceImpl(UsuarioRepository usuarioRepository){
         this.usuarioRepository = usuarioRepository;
     }
@@ -36,8 +36,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public UsuarioResponseDTO readUsuarioByEmail(String email){
-        Usuario usuario = usuarioRepository.findByEmail(email);
-        return UsuarioMapper.mapToUsuarioResponseDTO(usuario);
+        return usuarioRepository.findByEmail(email);
     }
 
     @Override
