@@ -8,8 +8,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import net.apps.rsapp.dto.UsuarioDTO.UsuarioCreateDTO;
 import net.apps.rsapp.dto.UsuarioDTO.UsuarioResponseDTO;
+import net.apps.rsapp.entity.Usuario.Usuario;
 import net.apps.rsapp.repository.UsuarioRepository;
-import net.apps.rsapp.entity.Usuario;
 import net.apps.rsapp.mapper.UsuarioMapper.UsuarioMapper;
 
 @Service

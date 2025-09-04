@@ -21,10 +21,9 @@ public class SalaController {
         this.salaService = salaService;
     }
 
-    //TODO: IMPLEMENTAR SIGLACAMPI EM SALA (NA CLASSE, NA CLASSE DTO, REPOSITORIO E CONTROLLER)
     @GetMapping("/{siglacampi}/{idbloco}")
-    public ResponseEntity<List<SalaDTO>> findAllSalasAtBloco(@PathVariable String idbloco) {
-        List<SalaDTO> salas = salaService.findAllSalasAtBloco(idbloco);
+    public ResponseEntity<List<SalaDTO>> findAllSalasAtBloco(@PathVariable("siglacampi") String siglacampi, @PathVariable("idbloco") String idbloco) {
+        List<SalaDTO> salas = salaService.findAllSalasAtBloco(siglacampi, idbloco);
         return new ResponseEntity<>(salas, HttpStatus.OK); 
     }
 }

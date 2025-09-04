@@ -1,31 +1,20 @@
 package net.apps.rsapp.dto.SalaDTO;
 
-
 public class SalaDTO {
-    private Long nmrsala;
-    private String idbloco;
+    private int nmrsala;
 
     public SalaDTO() {}
 
-    public SalaDTO(Long nmrsala, String idbloco) {
-        this.nmrsala = nmrsala;
-        this.idbloco = idbloco;
-    }
-
-    public Long getNmrsala() {
-        return nmrsala;
-    }
-
-    public void setNmrsala(Long nmrsala) {
+    public SalaDTO(int nmrsala) {
         this.nmrsala = nmrsala;
     }
 
-    public String getIdbloco() {
-        return idbloco;
+    public int getNmrSala(){
+        return this.nmrsala;
     }
 
-    public void setIdbloco(String idbloco) {
-        this.idbloco = idbloco;
+    public void setNmrSala(int nmrsala){
+        this.nmrsala = nmrsala;
     }
 }
 

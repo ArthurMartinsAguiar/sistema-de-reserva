@@ -1,4 +1,4 @@
-package net.apps.rsapp.entity.Sala;
+package net.apps.rsapp.entity.Bloco;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,10 +7,9 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 
 @Entity
-@IdClass( SalaPK.class )
-@Table(name = "sala")
-public class Sala {
-    
+@IdClass( BlocoPK.class )
+@Table(name = "bloco")
+public class Bloco {
     @Id
     @Column(name = "siglacampi", columnDefinition = "CHAR(2)", length = 2)
     private String siglacampi;
@@ -18,20 +17,14 @@ public class Sala {
     @Id
     @Column(name = "idbloco", columnDefinition = "CHAR(4)", length = 4)
     private String idbloco;
-    
-    @Id
-    @Column(name = "nmrsala", columnDefinition = "SMALLINT")
-    private int nmrsala;
 
-
-    public SalaPK getPK(){
-        return new SalaPK(siglacampi, idbloco, nmrsala);
+    public BlocoPK getPK(){
+        return new BlocoPK(siglacampi, idbloco);
     }
 
-    public void setPK(SalaPK pk){
+    public void setPK(BlocoPK pk){
         this.siglacampi = pk.getSiglaCampi();
         this.idbloco = pk.getIdBloco();
-        this.nmrsala = pk.getNmrSala();
     }
 
     public String getSiglaCampi(){
@@ -50,18 +43,9 @@ public class Sala {
         this.idbloco = idbloco;
     }
 
-    public int getNmrSala(){
-        return this.nmrsala;
-    }
-
-    public void setNmrSala(int nmrsala){
-        this.nmrsala = nmrsala;
-    }
-
     @Override
     public String toString(){
-        return "Sala{" + "siglacampi=" + this.siglacampi + ", idbloco=" + 
-            this.idbloco + "nmrsala=" + this.nmrsala +'}';
+        return "Bloco{" + "siglacampi=" + this.siglacampi + ", idbloco=" + 
+            this.idbloco + '}';
     }
-
 }

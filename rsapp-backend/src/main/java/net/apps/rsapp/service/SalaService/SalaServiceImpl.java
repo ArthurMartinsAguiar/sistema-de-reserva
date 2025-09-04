@@ -16,8 +16,8 @@ public class SalaServiceImpl implements SalaService{
     }
 
     @Override
-    public List<SalaDTO> findAllSalasAtBloco(String idbloco) {
-        return salaRepository.findAllSalasAtBloco(idbloco);
+    public List<SalaDTO> findAllSalasAtBloco(String siglacampi, String idbloco) {
+        return salaRepository.findAllSalasAtBloco(siglacampi, idbloco);
     }
     
 }

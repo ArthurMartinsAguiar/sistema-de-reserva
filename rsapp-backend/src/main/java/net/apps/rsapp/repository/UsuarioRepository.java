@@ -1,7 +1,8 @@
 package net.apps.rsapp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import net.apps.rsapp.entity.Usuario;
+
+import net.apps.rsapp.entity.Usuario.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
