@@ -1,26 +1,26 @@
 package net.apps.rsapp.dto.UsuarioDTO;
 
 public class UsuarioResponseDTO {
-     private Long idusuario;
-    private String nomeusuario;
+    private Long id;
+    private String email;
     private String siglafac;
 
     //Constructors
     public UsuarioResponseDTO() {}
     
-    public UsuarioResponseDTO(Long idusuario, String nomeusuario, String siglafac) {
-        this.idusuario = idusuario;
-        this.nomeusuario = nomeusuario;
+    public UsuarioResponseDTO(Long id, String email, String siglafac) {
+        this.id = id;
+        this.email = email;
         this.siglafac = siglafac;
     }
 
     //Getters
-    public Long getIdusuario(){
-        return this.idusuario;
+    public Long getId(){
+        return this.id;
     }
 
-    public String getNomeusuario(){
-        return this.nomeusuario;
+    public String getEmail(){
+        return this.email;
     }
 
     public String getSiglafac(){

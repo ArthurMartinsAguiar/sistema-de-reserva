@@ -12,22 +12,22 @@ public class UsuarioMapper {
 
     public static UsuarioCreateDTO mapToUsuarioCreateDTO(Usuario usuario){
         return new UsuarioCreateDTO(
-            usuario.getNomeusuario(),
+            usuario.getEmail(),
             usuario.getSiglafac()
         );
     }
 
     public static UsuarioResponseDTO mapToUsuarioResponseDTO(Usuario usuario){
         return new UsuarioResponseDTO(
-            usuario.getIdusuario(),
-            usuario.getNomeusuario(),
-            usuario.getNomeusuario()
+            usuario.getId(),
+            usuario.getEmail(),
+            usuario.getEmail()
         );
     }
 
     public static Usuario mapToUsuario(UsuarioCreateDTO usuarioCreateDTO){
         return new Usuario(
-            usuarioCreateDTO.getNomeusuario(),
+            usuarioCreateDTO.getEmail(),
             usuarioCreateDTO.getSiglafac()
         );
     }

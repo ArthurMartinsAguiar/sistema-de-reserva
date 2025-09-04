@@ -14,35 +14,35 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idusuario;
-    private String nomeusuario;
+    private Long id;
+    private String email;
     private String siglafac;
 
     public Usuario() {}
     
-    public Usuario(String nomeusuario, String siglafac) {
-        this.nomeusuario = nomeusuario;
+    public Usuario(String email, String siglafac) {
+        this.email = email;
         this.siglafac = siglafac;
     }
 
-    public Long getIdusuario(){
-        return this.idusuario;
+    public Long getId(){
+        return this.id;
     }
 
-    public String getNomeusuario(){
-        return this.nomeusuario;
+    public String getEmail(){
+        return this.email;
     }
 
     public String getSiglafac(){
         return this.siglafac;
     }
 
-    public void SetIdusuario(Long idusuario){
-        this.idusuario = idusuario;
+    public void SetIdusuario(Long id){
+        this.id = id;
     }
 
-    public void SetNomeusuario(String nomeusuario){
-        this.nomeusuario = nomeusuario;
+    public void SetNomeusuario(String email){
+        this.email = email;
     }
 
     public void SetSiglafac(String siglafac){
@@ -57,20 +57,20 @@ public class Usuario {
             return false;
         
         Usuario usuario = (Usuario) o;
-        return Objects.equals(this.idusuario, usuario.idusuario) && 
-            Objects.equals(this.nomeusuario, usuario.nomeusuario) && 
+        return Objects.equals(this.id, usuario.id) && 
+            Objects.equals(this.email, usuario.email) && 
             Objects.equals(this.siglafac, usuario.siglafac);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.idusuario, this.nomeusuario, this.siglafac);
+        return Objects.hash(this.id, this.email, this.siglafac);
     }
 
     @Override
     public String toString(){
-        return "Usuario{" + "idusuario=" + this.idusuario + ", nomeusuario=" + 
-            this.nomeusuario + '\'' + ", siglafac=" + this.siglafac + 
+        return "Usuario{" + "idusuario=" + this.id + ", email=" + 
+            this.email + '\'' + ", siglafac=" + this.siglafac + 
             '\'' + '}';
     }
 

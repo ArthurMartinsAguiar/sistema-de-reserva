@@ -1,20 +1,20 @@
 package net.apps.rsapp.dto.UsuarioDTO;
 
 public class UsuarioCreateDTO {
-    private String nomeusuario;
+    private String email;
     private String siglafac;
 
     //Constructors
     public UsuarioCreateDTO() {}
     
-    public UsuarioCreateDTO(String nomeusuario, String siglafac) {
-        this.nomeusuario = nomeusuario;
+    public UsuarioCreateDTO(String email, String siglafac) {
+        this.email = email;
         this.siglafac = siglafac;
     }
 
     //Getters
-    public String getNomeusuario(){
-        return this.nomeusuario;
+    public String getEmail(){
+        return this.email;
     }
 
     public String getSiglafac(){
