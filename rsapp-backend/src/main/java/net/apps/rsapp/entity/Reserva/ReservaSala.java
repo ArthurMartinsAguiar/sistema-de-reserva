@@ -68,11 +68,11 @@ public class ReservaSala {
         this.idbloco = idbloco;
     }
     
-    public int getNmSala() {
+    public int getNmrSala() {
         return this.nmrsala;
     }
 
-    public void setNmSala(int nmrsala) {
+    public void setNmrSala(int nmrsala) {
         this.nmrsala = nmrsala;
     }
 

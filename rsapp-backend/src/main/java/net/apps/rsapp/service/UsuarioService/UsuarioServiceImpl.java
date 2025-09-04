@@ -29,8 +29,14 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public UsuarioResponseDTO readUsuario(Long idusuario) {
-    Usuario usuario = usuarioRepository.findById(idusuario)
-        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
+        Usuario usuario = usuarioRepository.findById(idusuario)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
+        return UsuarioMapper.mapToUsuarioResponseDTO(usuario);
+    }
+
+    @Override
+    public UsuarioResponseDTO readUsuarioByEmail(String email){
+        Usuario usuario = usuarioRepository.findByEmail(email);
         return UsuarioMapper.mapToUsuarioResponseDTO(usuario);
     }
 
