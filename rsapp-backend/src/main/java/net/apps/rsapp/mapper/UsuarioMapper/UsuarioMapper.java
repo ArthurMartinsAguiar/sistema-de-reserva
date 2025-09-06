@@ -1,8 +1,7 @@
 package net.apps.rsapp.mapper.UsuarioMapper;
 
-import net.apps.rsapp.dto.UsuarioDTO.UsuarioCreateDTO;
-import net.apps.rsapp.dto.UsuarioDTO.UsuarioResponseDTO;
-import net.apps.rsapp.entity.Usuario.Usuario;
+import net.apps.rsapp.dto.usuarioDTO.UsuarioDTO;
+import net.apps.rsapp.entity.usuario.Usuario;
 
 /*
  * A classe 'UsuarioMapper' mapeia uma instância da entidade 'Usuario'
@@ -10,25 +9,15 @@ import net.apps.rsapp.entity.Usuario.Usuario;
  */
 public class UsuarioMapper {
 
-    public static UsuarioCreateDTO mapToUsuarioCreateDTO(Usuario usuario){
-        return new UsuarioCreateDTO(
-            usuario.getEmail(),
-            usuario.getSiglafac()
-        );
+    public static UsuarioDTO mapToUsuarioDTO(Usuario usuario) {
+        return new UsuarioDTO(
+                usuario.getEmail(),
+                usuario.getSiglaFac());
     }
 
-    public static UsuarioResponseDTO mapToUsuarioResponseDTO(Usuario usuario){
-        return new UsuarioResponseDTO(
-            usuario.getId(),
-            usuario.getEmail(),
-            usuario.getEmail()
-        );
-    }
-
-    public static Usuario mapToUsuario(UsuarioCreateDTO usuarioCreateDTO){
+    public static Usuario mapToUsuario(UsuarioDTO usuarioDTO) {
         return new Usuario(
-            usuarioCreateDTO.getEmail(),
-            usuarioCreateDTO.getSiglafac()
-        );
+                usuarioDTO.getEmail(),
+                usuarioDTO.getSiglaFac());
     }
 }

@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import net.apps.rsapp.dto.BlocoDTO.BlocoDTO;
-import net.apps.rsapp.entity.Bloco.Bloco;
-import net.apps.rsapp.entity.Bloco.BlocoPK;
+import net.apps.rsapp.entity.bloco.Bloco;
+import net.apps.rsapp.entity.bloco.BlocoPK;
 
 import java.util.List;
 

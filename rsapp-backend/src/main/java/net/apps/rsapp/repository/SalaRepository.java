@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import net.apps.rsapp.dto.SalaDTO.SalaDTO;
-import net.apps.rsapp.entity.Sala.Sala;
-import net.apps.rsapp.entity.Sala.SalaPK;
+import net.apps.rsapp.entity.sala.Sala;
+import net.apps.rsapp.entity.sala.SalaPK;
 
 import java.util.List;
 

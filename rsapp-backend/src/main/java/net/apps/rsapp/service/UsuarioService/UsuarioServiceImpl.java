@@ -1,14 +1,10 @@
 package net.apps.rsapp.service.UsuarioService;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
-import net.apps.rsapp.dto.UsuarioDTO.UsuarioCreateDTO;
-import net.apps.rsapp.dto.UsuarioDTO.UsuarioResponseDTO;
-import net.apps.rsapp.entity.Usuario.Usuario;
+import net.apps.rsapp.dto.usuarioDTO.UsuarioDTO;
+import net.apps.rsapp.entity.usuario.Usuario;
 import net.apps.rsapp.repository.UsuarioRepository;
 import net.apps.rsapp.mapper.UsuarioMapper.UsuarioMapper;
 
@@ -21,29 +17,24 @@ public class UsuarioServiceImpl implements UsuarioService{
     }
     
     @Override
-    public UsuarioResponseDTO createUsuario(UsuarioCreateDTO usuarioCreateDTO) {
-        Usuario usuario = UsuarioMapper.mapToUsuario(usuarioCreateDTO);
-        Usuario savedUsuario = usuarioRepository.save(usuario);
-        return UsuarioMapper.mapToUsuarioResponseDTO(savedUsuario);    
+    public UsuarioDTO createUsuario(UsuarioDTO usuarioDTO) {
+        Usuario newUsuario = UsuarioMapper.mapToUsuario(usuarioDTO);
+        Usuario savedUsuario = usuarioRepository.save(newUsuario);
+        return UsuarioMapper.mapToUsuarioDTO(savedUsuario);    
     }
 
     @Override
-    public UsuarioResponseDTO readUsuario(Long idusuario) {
-        Usuario usuario = usuarioRepository.findById(idusuario)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
-        return UsuarioMapper.mapToUsuarioResponseDTO(usuario);
+    public UsuarioDTO findOrCreateUsuario(String email) {
+        Usuario usuario = usuarioRepository.findById(email)
+            .orElseGet(() -> usuarioRepository.save(new Usuario(email, "UFU")));
+        return UsuarioMapper.mapToUsuarioDTO(usuario);
     }
 
     @Override
-    public UsuarioResponseDTO readUsuarioByEmail(String email){
-        return usuarioRepository.findByEmail(email);
-    }
-
-    @Override
-    public List<UsuarioResponseDTO> readUsuarios(){
+    public List<UsuarioDTO> readUsuarios(){
         List<Usuario> usuarios = usuarioRepository.findAll();
         return usuarios.stream().map((usuario) -> 
-            UsuarioMapper.mapToUsuarioResponseDTO(usuario)).collect(Collectors.toList());
-    };
+            UsuarioMapper.mapToUsuarioDTO(usuario)).collect(Collectors.toList());
+    }
 
 }
